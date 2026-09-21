@@ -8,6 +8,8 @@ An ObjectStack application built to evaluate invoice workflows and company-level
 
 [Read or download the full Invoice Review Application Analysis](docs/invoice-review-application-analysis.docx).
 
+[All submitted prompts](docs/submitted-prompts.txt), preserved exactly as supplied, including follow-up requests and corrections.
+
 The 11-page report, dated **21 September 2026**, covers 43 grouped requirement checks against the submitted Stage 1 and Stage 2 prompts. Evidence comes from browser journeys, five demo role accounts, controlled server requests, database inspection, and review of the app and its installed ObjectStack **17.4.0** packages. The user identified the build model as Sol light; this assessment does not establish that the model caused the failures.
 
 ## Summary of findings
