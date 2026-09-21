@@ -1,0 +1,220 @@
+# Invoice Review — Submitted Prompts
+
+The original prompts and follow-up requests, in the order supplied. Headings, numbering and spacing have been added for readability; the original wording, including spelling, is unchanged. Browser-testing instructions remain with the feature request they follow.
+
+[View the original plain-text attachment](submitted-prompts.txt).
+
+## Contents
+
+- [1. Create the supplier directory](#1-create-the-supplier-directory)
+- [2. Add purchase orders, invoices and calculations](#2-add-purchase-orders-invoices-and-calculations)
+- [3. Report the invoice creation error](#3-report-the-invoice-creation-error)
+- [4. Add the daily workspace and dashboard](#4-add-the-daily-workspace-and-dashboard)
+- [5. Add company workspaces, roles and access rules](#5-add-company-workspaces-roles-and-access-rules)
+- [6. Report the empty company dropdown](#6-report-the-empty-company-dropdown)
+- [7. Report the dropdown rendering problem](#7-report-the-dropdown-rendering-problem)
+- [8. Ask for the company assignment screen](#8-ask-for-the-company-assignment-screen)
+- [9. Revisit the requested requirements](#9-revisit-the-requested-requirements)
+- [10. Request complete implementation](#10-request-complete-implementation)
+- [11. Ask about organization membership controls](#11-ask-about-organization-membership-controls)
+
+---
+
+## 1. Create the supplier directory
+
+Create an app called “Invoice Review”. We’ll build it a little at a time.
+
+Start with a supplier directory. For each supplier, let me record:
+
+- Supplier name
+- Supplier code
+- Contact email
+- Whether the supplier is active
+- Notes
+
+The name and supplier code should be required. Two suppliers should not have the same code.
+
+Give me a searchable supplier list and a simple form for adding or editing a supplier. Add five fictional suppliers so I can explore the app immediately.
+
+When it is ready, show me the app and walk me through adding a supplier, editing its details and finding it again.
+
+---
+
+## 2. Add purchase orders, invoices and calculations
+
+Now add purchase orders and invoices to Invoice Review.
+
+### For purchase orders, capture:
+
+- PO number
+- Supplier
+- Order date
+- Expected total
+- Status: Draft, Open or Closed
+
+### For invoices, capture:
+
+- Invoice number
+- Supplier
+- Related purchase order, if there is one
+- Invoice date
+- Due date
+- Status: Draft, Open, Paid or Cancelled
+- Notes
+
+Let me add several line items to each invoice. Each line needs a description, quantity and unit price. Calculate the line amounts and invoice total automatically.
+
+Use USD for everything. Leave taxes, discounts and partial payments for later.
+
+### Apply these rules:
+
+- Quantities must be positive whole numbers.
+- Prices cannot be negative.
+- The due date cannot be before the invoice date.
+- An invoice can only link to a purchase order belonging to the same supplier.
+- Changing or removing a line must update the total.
+
+Add six fictional purchase orders and twelve sample invoices with different statuses and due dates. Include some overdue invoices and some without purchase orders.
+
+Make it easy to open an invoice, see its supplier and purchase order, and edit its lines.
+
+When it is ready, walk me through creating one invoice. Use one line for $100.10 and another for two items at $25.25 each. Show that the total is $150.60.
+
+Let me know if any requested feature is missing.
+
+Do not check implmentation in the browser. Instead give me steps to check.
+
+---
+
+## 3. Report the invoice creation error
+
+Creating invoice gives me internal server error
+
+---
+
+## 4. Add the daily workspace and dashboard
+
+Make Invoice Review useful as a daily workspace.
+
+### Organize it into:
+
+- Dashboard
+- Invoices
+- Purchase Orders
+- Suppliers
+
+### Within Invoices, give me these views:
+
+- All invoices
+- Open invoices
+- Overdue invoices
+- Paid invoices
+
+An invoice is overdue when its status is Open and its due date has passed.
+
+In the lists, show the supplier, invoice number, purchase-order reference, dates, status and total. Let me search and filter the records.
+
+### Create a dashboard showing:
+
+- Total number of invoices
+- Total value of Open invoices
+- Number of overdue invoices
+- Invoice count by status
+- Open invoice value by supplier
+
+These figures must come from the actual invoices and reflect changes when I refresh.
+
+Check that the dashboard agrees with the invoice lists. Make sure my changes remain saved when I close and reopen the app.
+
+When it is ready, give me a short walkthrough and three small changes I can request to practise configuring the app.
+
+Stop here for now. We’ll add approval processes, document reading and AI assistance later.
+
+---
+
+## 5. Add company workspaces, roles and access rules
+
+Continue building Invoice Review. Add the ability for different companies and different types of users to work in the app with appropriate access.
+
+Preserve the existing screens, records, calculations and dashboard.
+
+### Separate company workspaces
+
+Create two fictional companies: Northstar Services and Evergreen Trading.
+
+Each company should have its own suppliers, purchase orders, invoices and users. People working for one company must not see the other company’s information.
+
+Clearly display the company the user is currently working in. If someone belongs to both companies, let them switch between them deliberately.
+
+Assign the existing sample records to Northstar Services and add a separate set of fictional records for Evergreen Trading.
+
+### User roles
+
+Support these roles within each company:
+
+### Rules for editing and deleting
+
+- Record who created each invoice.
+- Submitters cannot edit invoices created by someone else.
+- Submitters cannot mark invoices as Paid or Cancelled.
+- Finance Analysts and Company Administrators can maintain invoice statuses for now.
+- Paid and Cancelled invoices are read-only for everyone.
+- Only Draft invoices can be deleted, and only by their creator, a Finance Analyst or a Company Administrator.
+- A supplier or purchase order that is already used by an invoice should not be deletable.
+- An invoice cannot be connected to a supplier or purchase order from another company.
+
+### Confidential information
+
+Add an “Internal finance notes” field to invoices.
+
+Only Finance Analysts, Approvers and Company Administrators should be able to read it. Only Finance Analysts and Company Administrators should be able to edit it, subject to the invoice editing rules above.
+
+Submitters and Auditors must not receive these notes in screens, searches, downloads or shared information.
+
+### Make access clear in the experience
+
+Show people only the records and actions available to them.
+
+Lists, searches and dashboard figures must reflect the information that the current user is allowed to see. For example, a Submitter’s dashboard should summarize their own invoices.
+
+When someone tries to open information they cannot access, show a clear message without revealing the restricted information.
+
+Removing someone from a company or changing their role should update their access, including when they already have the app open.
+
+Dont use browser to verify and give me steps to test rather,
+
+---
+
+## 6. Report the empty company dropdown
+
+Select a company shows nothing in dropdown.
+
+---
+
+## 7. Report the dropdown rendering problem
+
+Its still not working. I see the API is being called but nothing renders
+
+---
+
+## 8. Ask for the company assignment screen
+
+Where is the UI to awsign users to approproate company
+
+---
+
+## 9. Revisit the requested requirements
+
+Did the requirement for the feature pasted above not include these features?
+
+---
+
+## 10. Request complete implementation
+
+Follow those requirements and implement it complete.
+
+---
+
+## 11. Ask about organization membership controls
+
+Where is the control to add user to a particulat org? Currently adding new user is only asking email and password and in the organization tab I dont see company names to add user to it but see just a default organization
