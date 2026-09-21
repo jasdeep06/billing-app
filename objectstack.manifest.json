@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.objectstack.dev/template-manifest.json",
+  "name": "billing-app",
+  "namespace": "billing_app",
+  "specVersion": "^17.0.0",
+  "displayName": "Billing App",
+  "category": "starter",
+  "isStarter": true,
+  "skills": [
+    "objectstack-platform",
+    "objectstack-data"
+  ],
+  "readmePath": "README.md",
+  "scaffold": {
+    "variables": {
+      "appName": {
+        "type": "string",
+        "prompt": "Application name",
+        "default": "my-app"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "objectstack-ai": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-ai/SKILL.md",
+      "computedHash": "4c41ce94d8cd4442a23ee595383895c169edb6004270eeac6b524a6dcbb7a56a"
+    },
+    "objectstack-api": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-api/SKILL.md",
+      "computedHash": "0b899509553616c7989908eec3ce2dfe655c626ba8645445dd1a1033aec6a1db"
+    },
+    "objectstack-automation": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-automation/SKILL.md",
+      "computedHash": "644ccc3ffe45ecd00538d19d511617508bf3eccf3d5c078167ce74c1a2c9e8cc"
+    },
+    "objectstack-data": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-data/SKILL.md",
+      "computedHash": "53c81022924a3c4adcf7258b40cf6576614f44e209a987b9dcaaec8bc864e7c9"
+    },
+    "objectstack-formula": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-formula/SKILL.md",
+      "computedHash": "f5f20cce975cedf23fff439270021da9a7b66ee54141119c222a0eb7d2e828d5"
+    },
+    "objectstack-i18n": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-i18n/SKILL.md",
+      "computedHash": "8cc0f9111a1b0ff0dba068ec62de9144d3d86b49e99c20841a752a8082666331"
+    },
+    "objectstack-platform": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-platform/SKILL.md",
+      "computedHash": "dcb46f1ed133d7eef077dab357d4ce62414d5e9cebb42213df00d35f263bb718"
+    },
+    "objectstack-query": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-query/SKILL.md",
+      "computedHash": "05d7f9f111c48fc3d56eb41fa5dee35567bf9534cf2c3bd784e0515e837a1b5d"
+    },
+    "objectstack-ui": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-ui/SKILL.md",
+      "computedHash": "160e0355d373673199bdd099ea764dbc690fb9193eace71fbaa0147656745ed1"
+    },
+    "objectstack-upgrade": {
+      "source": "objectstack-ai/objectstack",
+      "sourceType": "github",
+      "skillPath": "skills/objectstack-upgrade/SKILL.md",
+      "computedHash": "bfb8ff890112e9615320c8b11510e58cba0dadfcde503c7a5889a2991067b33e"
+    }
+  }
+}

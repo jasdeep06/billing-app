@@ -1,0 +1,50 @@
+# Continuous integration for this ObjectStack app.
+#
+# ObjectStack metadata fails SILENTLY at runtime, not at edit time: a mistyped
+# permission grant or a bare field name in an action predicate raises nothing,
+# it just behaves wrongly for whoever hits it first. `objectstack validate` is
+# where that class surfaces — and running it is something a human, or an AI
+# agent authoring metadata in this project, has to remember. This workflow is
+# what makes it unskippable. AGENTS.md carries the authoring conventions it
+# enforces.
+#
+# One job, one file: a starting point, not a CI framework. Grow it with the
+# project — add a step when you add a script, a second job when you deploy.
+
+name: CI
+
+on: [push, pull_request]
+
+# Read-only. Nothing here writes to the repository or publishes anything.
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Reproduce the audited dependency resolution from package-lock.json.
+      - run: npm ci
+
+      # The gate this file exists for: schema, CEL predicates and widget
+      # bindings. The same checks `npm run build` runs, without producing an
+      # artifact.
+      - run: npm run validate
+
+      # Not a second spelling of `validate`. The two share the authoring-rule
+      # engine but not the rule set — the hook-body lowering check, which
+      # catches handlers that silently stop lowering to metadata-only bodies
+      # (a change of deployment shape, from a refactor that looks like
+      # tidying), runs here and nowhere else.
+      - run: npm run lint
+
+      - run: npm run typecheck

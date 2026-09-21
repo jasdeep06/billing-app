@@ -1,0 +1,21 @@
+node_modules
+dist
+.objectstack/
+*.log
+.DS_Store
+.env
+.env.*
+
+# Local credentials, sessions and runtime data
+cookies.txt
+cookies*.txt
+demo-accounts.json
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.pem
+*.key
+.claude/settings.local.json
